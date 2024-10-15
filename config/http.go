@@ -26,8 +26,7 @@ func init() {
 				"template": func() (render.HTMLRender, error) {
 					return gin.DefaultTemplate()
 				},
-				// Optional, default is 3 Second
-				"timeout": 3,
+				
 			},
 		},
 		// HTTP URL
@@ -36,6 +35,8 @@ func init() {
 		"host": config.Env("APP_HOST", "127.0.0.1"),
 		// HTTP Port
 		"port": config.Env("APP_PORT", "3000"),
+		// Optional, default is 3 Second
+		"timeout_request": 3,
 		// HTTPS Configuration
 		"tls": map[string]any{
 			// HTTPS Host
